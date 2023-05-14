@@ -27,15 +27,6 @@ function App() {
       header: true,
       skipEmptyLines: true,
       complete: function (results) {
-        const rowsArray = [];
-        const valuesArray = [];
-
-        // Iterating data to get column name and their values
-        results.data.map((d) => {
-          rowsArray.push(Object.keys(d));
-          valuesArray.push(Object.values(d));
-        });
-
         // Parsed Data Response in array format
         setData(results.data);
         localStorage.setItem('gridData', JSON.stringify(results.data));
