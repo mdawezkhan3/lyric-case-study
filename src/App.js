@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { parseCSV } from "./utils/util";
 import { Grid, UploadCsvFile, Header, HistoryDrawer } from './components';
 import styles from './App.module.scss';
+import Papa from "papaparse";
 
 function App() {
   const [data, setData] = useState([]);
@@ -23,15 +23,24 @@ function App() {
   }, [history]);
 
   const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const contents = e.target.result;
-      const parsedData = parseCSV(contents);
-      setData(parsedData);
-      localStorage.setItem('gridData', JSON.stringify(parsedData));
-    };
-    reader.readAsText(file);
+    Papa.parse(event.target.files[0], {
+      header: true,
+      skipEmptyLines: true,
+      complete: function (results) {
+        const rowsArray = [];
+        const valuesArray = [];
+
+        // Iterating data to get column name and their values
+        results.data.map((d) => {
+          rowsArray.push(Object.keys(d));
+          valuesArray.push(Object.values(d));
+        });
+
+        // Parsed Data Response in array format
+        setData(results.data);
+        localStorage.setItem('gridData', JSON.stringify(results.data));
+      },
+    });
   };
 
   const handleCellClick = (rowIndex, columnName) => {
