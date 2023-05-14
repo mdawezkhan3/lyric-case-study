@@ -1,0 +1,122 @@
+.appContainer {
+  height: 100vh;
+  max-width:100%;
+  box-sizing: border-box;
+  background-color: #E5E5E5;
+  padding: 30px 60px;
+
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 33px;
+
+    .headerText {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 60%;
+    }
+
+    .uploadButtonContainer {
+
+      .uploadButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3C5DD2;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        width: 129px;
+        height: 35px;
+        border: 0;
+        cursor: pointer;
+
+        .uploadButtonText {
+          color: #FFFFFF;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  .uploadCsvContainer {
+    height: 550px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 25px 15px;
+
+    .historyBtnContainer {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      th {
+        background: rgba(60, 93, 210, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+      }
+      td {
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.historyDrawer {
+
+  header {
+    height: 60px;
+    background-color: #3C5DD2;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: space-between;
+  }
+  .timelineDate {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0px;
+    color: #000000;
+    opacity: 0.5;
+    margin-top: 7px;
+    margin-bottom: 20px;
+  }
+
+  .timelineModfiyLabelContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+
+    .timelineModfiyLabel {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+  }   
+}
