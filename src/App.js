@@ -30,6 +30,8 @@ function App() {
         // Parsed Data Response in array format
         setData(results.data);
         localStorage.setItem('gridData', JSON.stringify(results.data));
+        setHistory([]);
+        localStorage.setItem('gridHistory', JSON.stringify([]));
       },
     });
   };
